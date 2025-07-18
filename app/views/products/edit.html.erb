@@ -1,0 +1,10 @@
+<h1><%= t("products.edit") %></h1>
+
+<%= render "form", product: @product %>
+
+<br>
+
+<div>
+  <%= link_to t("products.show"), @product %> |
+  <%= link_to t("products.index.back"), products_path %>
+</div>
