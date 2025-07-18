@@ -1,0 +1,22 @@
+<%= form_with(model: product) do |form| %>
+  <% if product.errors.any? %>
+    <div class="error-messages">
+      <h2><%= t("errors.prohibited", count: product.errors.count, model: t("activerecord.models.product").downcase) %></h2>
+
+      <ul>
+        <% product.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, class: "form-label-block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

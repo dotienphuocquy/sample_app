@@ -1,0 +1,18 @@
+<% provide :title, t("static_pages.help.title") %>
+
+<h1><%= t("static_pages.help.title") %></h1>
+
+<p>
+  <%= t("static_pages.help.get_help") %>
+  <%# <%= link_to t("static_pages.home.rails_tutorial"), Settings.rails_tutorial_url, target: "_blank" %>
+  <%= link_to Settings.rails_tutorial_help_url, target: "_blank" do %>
+    <%= t("static_pages.help.rails_tutorial_help") %>
+  <% end %>.
+</p>
+
+<p>
+  <%= t("static_pages.help.sample_app_help") %>
+  <%= link_to Settings.rails_tutorial_book_url, target: "_blank" do %>
+    <em><%= t("static_pages.help.rails_tutorial_book") %></em>
+  <% end %>.
+</p>
