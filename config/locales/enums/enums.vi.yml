@@ -1,0 +1,7 @@
+vi:
+  enums:
+      user:
+        gender:
+          male: "Nam"
+          female: "Nữ"
+          other: "Khác"
