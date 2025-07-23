@@ -1,0 +1,74 @@
+// Imports
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "color";
+
+// Universal tag styles
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+table {
+  td {
+    padding: 8px 12px;
+    text-align: center;
+  }
+
+  a {
+    margin: 0 5px;
+  }
+}
+
+// CSS classes (.)
+.center {
+  text-align: center;
+
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+.error-messages {
+  color: $error;
+  margin-bottom: 15px;
+}
+
+.form-label-block {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.notice {
+  color: $notice;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+// CSS IDs (#)
+
+#logo {
+  color: $logo;
+  float: left;
+  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-right: 10px;
+  padding-top: 9px;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $logo;
+    text-decoration: none;
+  }
+}

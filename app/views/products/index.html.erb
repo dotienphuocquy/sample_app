@@ -1,0 +1,20 @@
+<p class="notice"><%= notice %></p>
+
+<h1><%= t(".title") %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t("activerecord.attributes.product.name") %></th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render(@products) || t("products.no_product") %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t("products.new"), new_product_path %>

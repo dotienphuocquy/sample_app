@@ -1,0 +1,10 @@
+<% provide :title, t("static_pages.home.title") %>
+
+<h1><%= t("static_pages.app_name") %></h1>
+
+<p>
+  <%= t(".hello_html") %>
+  <%= t("static_pages.home.description") %>
+  <%= link_to t("static_pages.home.rails_tutorial"), Settings.rails_tutorial_url, target: "_blank" %>
+  <%= t("static_pages.home.sample_app") %>.
+</p>
