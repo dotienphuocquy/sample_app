@@ -22,6 +22,8 @@ gem "importmap-rails"
 
 gem "config"
 
+gem "bcrypt"
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 

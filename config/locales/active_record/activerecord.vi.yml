@@ -1,0 +1,32 @@
+vi:
+  activerecord:
+    models:
+      product: "Sản phẩm"
+      user: "Người dùng"
+    attributes:
+      product:
+        name: "Tên sản phẩm"
+      user:
+        name: "Họ tên"
+        email: "Email"
+        birthday: "Ngày sinh"
+    errors:
+      models:
+        product:
+          attributes:
+            name:
+              blank: "không được để trống"
+        user:
+          attributes:
+            name:
+              blank: "không được để trống"
+              too_long: "quá dài (tối đa %{count} ký tự)"
+            email:
+              blank: "không được để trống"
+              too_long: "quá dài (tối đa %{count} ký tự)"
+              invalid: "không đúng định dạng"
+              taken: "đã được sử dụng"
+            birthday:
+              blank: "không được để trống"
+              birthday_in_future: "Ngày sinh không được nằm trong tương lai"
+              birthday_too_old: "Ngày"
