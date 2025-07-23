@@ -1,0 +1,15 @@
+vi:
+  static_pages:
+    app_name: "Ứng dụng mẫu"
+    home:
+      title: "Trang chủ"
+      hello_html: <h1>Chào mừng!</h1>
+      description: "Đây là trang chủ của"
+      rails_tutorial: "Hướng dẫn Ruby on Rails"
+      sample_app: "ứng dụng mẫu"
+    help:
+      title: "Trợ giúp"
+      get_help: "Nhận trợ giúp về Hướng dẫn Ruby on Rails tại"
+      rails_tutorial_help: "trang trợ giúp Hướng dẫn Rails"
+      sample_app_help: "Để nhận trợ giúp về ứng dụng mẫu này, xem"
+      rails_tutorial_book: "sách Hướng dẫn Ruby on Rails"

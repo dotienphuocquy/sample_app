@@ -1,0 +1,5 @@
+vi:
+  errors:
+    prohibited:
+      one: "1 lỗi ngăn %{model} này được lưu"
+      other: "%{count} lỗi ngăn %{model} này được lưu"

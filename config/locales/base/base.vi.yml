@@ -1,0 +1,10 @@
+vi:
+  language_names:
+    en: "Tiếng Anh"
+    vi: "Tiếng Việt"
+  confirm: "Bạn chắc chứ?"
+  show: "Xem"
+  edit: "Sửa"
+  destroy: "Xóa"
+  new: "Tạo mới"
+  log_in: "Đăng nhập"

@@ -1,0 +1,4 @@
+en:
+  layouts:
+    application:
+      base_title: "Ruby on Rails Tutorial Sample App"

@@ -1,0 +1,15 @@
+vi:
+  products:
+    new: "Tạo mới sản phẩm"
+    edit: "Sửa sản phẩm"
+    show: "Xem sản phẩm"
+    destroy: "Xóa sản phẩm"
+    index:
+      title: "Danh sách sản phẩm"
+      back: "Quay lại danh sách sản phẩm"
+    created: "Sản phẩm đã được tạo thành công"
+    updated: "Sản phẩm đã được cập nhật thành công"
+    destroyed: "Sản phẩm được xóa thành công"
+    destroy_failed: "Xóa sản phẩm thất bại"
+    not_found: "Không tìm thấy sản phẩm"
+    no_product: "Không có sản phẩm"
