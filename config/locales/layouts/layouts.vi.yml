@@ -1,0 +1,4 @@
+vi:
+  layouts:
+    application:
+      base_title: "Ứng dụng mẫu Ruby on Rails Tutorial"

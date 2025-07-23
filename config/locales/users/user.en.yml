@@ -1,0 +1,5 @@
+en:
+  users:
+    errors:
+      birthday_in_future: "Birthday can't be in the future"
+      birthday_too_old: "Birthday must be within the last %{max_age} years"

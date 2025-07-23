@@ -1,0 +1,15 @@
+en:
+  products:
+    new: "Create new product"
+    edit: "Edit product"
+    show: "View product"
+    destroy: "Delete product"
+    index:
+      title: "Product list"
+      back: "Back to product list"
+    created: "Product was successfully created"
+    updated: "Product was successfully updated"
+    destroyed: "Product was successfully deleted"
+    destroy_failed: "Product destroy failed"
+    not_found: "Product not found"
+    no_product: "No product"

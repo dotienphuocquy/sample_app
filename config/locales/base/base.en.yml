@@ -1,0 +1,10 @@
+en:
+  language_names:
+    en: "English"
+    vi: "Vietnamese"
+  confirm: "Are you sure?"
+  show: "View"
+  edit: "Edit"
+  destroy: "Delete"
+  new: "Create new"
+  log_in: "Log in"
