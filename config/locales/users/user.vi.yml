@@ -1,5 +1,0 @@
-vi:
-  users:
-    errors:
-      birthday_in_future: "Ngày sinh không được nằm trong tương lai"
-      birthday_too_old: "Ngày sinh phải trong vòng %{max_age} năm trở lại đây"

@@ -1,0 +1,15 @@
+<% provide :title, @user.name %>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1><%= gravatar_for @user %></h1>
+      <h1><%= t("activerecord.attributes.user.name") %>: <%= @user.name %></h1>
+      <h1><%= t("activerecord.attributes.user.email") %>: <%= @user.email %></h1>
+      <h1><%= t("activerecord.attributes.user.gender") %>: <%= t("enums.user.gender.#{@user.gender}") %></h1>
+      <h1><%= t("activerecord.attributes.user.birthday") %>: <%= l(@user.birthday, format: :long) %></h1>
+      <h1><%= t("created_at") %>: <%= l(@user.created_at, format: :long) %></h1>
+      <h1><%= t("updated_at") %>: <%= l(@user.updated_at, format: :long) %></h1>
+    </section>
+  </aside>
+</div>
