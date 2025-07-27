@@ -9,15 +9,6 @@ class User < ApplicationRecord
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  def self.digest string
-    cost = if ActiveModel::SecurePassword.min_cost
-             BCrypt::Engine::MIN_COST
-           else
-             BCrypt::Engine.cost
-           end
-    BCrypt::Password.create string, cost: cost # rubocop:disable Style/HashSyntax
-  end
-
   before_save :downcase_email
 
   validates :name, presence: true,
@@ -29,6 +20,44 @@ class User < ApplicationRecord
   validates :birthday, presence: true
   validate :birthday_within_max_age
   validates :gender, presence: true
+
+  attr_accessor :remember_token, :session_token
+
+  def remember
+    self.remember_token = User.new_token
+    update_column :remember_digest, User.digest(remember_token)
+  end
+
+  def create_session_token
+    self.session_token = User.new_token
+    update_column(:session_digest, User.digest(session_token))
+  end
+
+  def forget
+    update_columns(remember_digest: nil, session_digest: nil)
+  end
+
+  def authenticated? attribute, token
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
+
+    BCrypt::Password.new(digest).is_password?(token)
+  end
+
+  class << self
+    def digest string
+      cost = if ActiveModel::SecurePassword.min_cost
+               BCrypt::Engine::MIN_COST
+             else
+               BCrypt::Engine.cost
+             end
+      BCrypt::Password.create string, cost: cost # rubocop:disable Style/HashSyntax
+    end
+
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
+  end
 
   private
 
