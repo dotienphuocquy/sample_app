@@ -11,10 +11,16 @@
   </head>
 
   <body>
-    <%= link_to t("language_names.en"), locale: :en %>
-    <%= link_to t("language_names.vi"), locale: :vi %>
-
     <%= render "layouts/header" %>
+
+    <div>
+      <%= link_to t("language_names.en"), locale: :en, class: "btn btn-link" %>
+      <%= link_to t("language_names.vi"), locale: :vi, class: "btn btn-link" %>
+    </div>
+
+    <%= render "shared/error_messages" %>
+    <%= render "shared/flash_messages" %>
+
     <div class="container">
       <%= yield %>
     </div>

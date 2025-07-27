@@ -11,4 +11,8 @@ module UsersHelper
       [t("enums.user.gender.#{key}"), key]
     end
   end
+
+  def can_destroy_user? user
+    current_user.admin? && !current_user?(user)
+  end
 end

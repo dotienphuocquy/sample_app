@@ -1,13 +1,13 @@
-<% if @user.errors.any? %>
+<% if local_assigns[:user] && user.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-danger">
       <%= t("errors.prohibited",
-             count: @user.errors.count,
+             count: user.errors.count,
              model: t("activerecord.models.user")) %>
     </div>
 
     <ul>
-      <% @user.errors.full_messages.each do |msg| %>
+      <% user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>

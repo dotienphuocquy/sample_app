@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
+  include SessionsHelper
+  include Pagy::Backend
+
   before_action :set_locale
+  protect_from_forgery with: :exception
 
   def set_locale
     available = I18n.available_locales.map(&:to_s)
@@ -13,7 +17,4 @@ class ApplicationController < ActionController::Base
   def default_url_options
     {locale: I18n.locale}
   end
-
-  protect_from_forgery with: :exception
-  include SessionsHelper
 end

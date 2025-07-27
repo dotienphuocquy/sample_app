@@ -24,6 +24,10 @@ gem "config"
 
 gem "bcrypt"
 
+gem "faker"
+
+gem "pagy"
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
@@ -59,6 +63,7 @@ gem "jquery-rails"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html
+  gem "byebug"
   gem "debug", platforms: %i(mri mingw x64_mingw)
   gem "rubocop", "~> 1.26", require: false
   gem "rubocop-checkstyle_formatter", require: false

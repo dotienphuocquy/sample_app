@@ -7,6 +7,10 @@ module SessionsHelper
     current_user.present?
   end
 
+  def current_user? user
+    user == current_user
+  end
+
   def forget user
     user.forget
     cookies.delete :user_id
@@ -34,6 +38,28 @@ module SessionsHelper
         log_in user
         @current_user = user
       end
+    end
+  end
+
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
+  end
+
+  def log_in_and_redirect user
+    reset_session
+    log_in user
+
+    handle_remember_me(user)
+
+    forwarding_url = session[:forwarding_url]
+    redirect_to forwarding_url || user
+  end
+
+  def handle_remember_me user
+    if params.dig(:session, :remember_me) == "1"
+      remember(user)
+    else
+      forget(user)
     end
   end
 end

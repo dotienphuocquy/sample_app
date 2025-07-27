@@ -20,6 +20,8 @@ class User < ApplicationRecord
   validates :birthday, presence: true
   validate :birthday_within_max_age
   validates :gender, presence: true
+  validates :password, presence: true,
+          length: {minimum: Settings.user.min_password_length}, allow_nil: true
 
   attr_accessor :remember_token
 
@@ -66,7 +68,7 @@ class User < ApplicationRecord
     if birthday > Time.zone.today
       errors.add(:birthday, :birthday_in_future)
     elsif birthday < max_date
-      errors.add(:birthday, :birthday_too_old, max_age: max_age) # rubocop:disable Style/HashSyntax
+      errors.add(:birthday, :birthday_too_old, max_age:)
     end
   end
 end
