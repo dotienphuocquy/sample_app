@@ -1,0 +1,12 @@
+vi:
+  flash:
+    success:
+      user_created: "Tạo tài khoản thành công!"
+      profile_updated: "Cập nhật hồ sơ thành công!"
+    danger:
+      user_not_found: "Không tìm thấy người dùng."
+      please_log_in: "Vui lòng đăng nhập."
+    error:
+      cannot_edit: "Bạn không được phép chỉnh sửa."
+      invalid_email_password_combination: "Mật khẩu hoặc tài khoản không đúng."
+      sign_up_failed: "Đăng ký thất bại"

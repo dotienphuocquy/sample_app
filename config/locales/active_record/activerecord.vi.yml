@@ -32,4 +32,4 @@ vi:
             birthday:
               blank: "không được để trống"
               birthday_in_future: "Ngày sinh không được nằm trong tương lai"
-              birthday_too_old: "Ngày"
+              birthday_too_old: "Ngày sinh phải từ %{max_age} trở lại"

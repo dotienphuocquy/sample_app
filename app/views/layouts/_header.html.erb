@@ -1,32 +1,32 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <li>
-    <%= link_to t("static_pages.help.title"), help_path %>
-  </li>
-  <% if logged_in? %>
-    <li>
-      <%= link_to t("static_pages.home.title"), home_path %>
-    </li>
-    <li class="dropdown">
-      <%= link_to "#", id: "account", class: "dropdown-toggle", data: { toggle: "dropdown" } do %>
-        <%= t("account") %>
-        <b class="caret"></b>
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li>
+        <%= link_to t("static_pages.help.title"), help_path %>
+      </li>
+      <li>
+        <%= link_to t("static_pages.home.title"), home_path %>
+      </li>
+      <% if logged_in? %>
+        <li>
+          <%= link_to t("users"), users_path %>
+        </li>
+        <li class="dropdown">
+          <%= link_to "#", id: "account", class: "dropdown-toggle", data: { toggle: "dropdown" } do %>
+            <%= t("account") %>
+            <b class="caret"></b>
+          <% end %>
+          <ul class="dropdown-menu" id="dropdown-menu">
+            <li><%= link_to t("profile"), current_user %></li>
+            <li><%= link_to t("settings"), edit_user_path(current_user) %></li>
+            <li><%= link_to t("log_out"), logout_path, method: :delete, data: { turbo_method: :delete } %></li>
+          </ul>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to t("log_in"), login_path %>
+        </li>
       <% end %>
-      <ul class="dropdown-menu" id="dropdown-menu">
-        <li>
-          <%= link_to t("profile"), current_user %>
-        </li>
-        <li>
-          <%= link_to t("settings"), "#" %>
-        </li>
-        <li class="divider"></li>
-        <li>
-          <%= link_to t("log_out"), logout_path, method: :delete, data: { turbo_method: :delete } %>
-        </li>
-      </ul>
-    </li>
-  <% else %>
-    <li>
-      <%= link_to t("log_in"), login_path %>
-    </li>
-  <% end %>
+    </ul>
+  </div>
 </header>

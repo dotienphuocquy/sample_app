@@ -1,0 +1,12 @@
+en:
+  flash:
+    success:
+      user_created: "Account created successfully!"
+      profile_updated: "Profile updated successfully!"
+    danger:
+      user_not_found: "User not found."
+      please_log_in: "Please log in."
+    error:
+      cannot_edit: "You are not authorized to edit this page."
+      invalid_email_password_combination: "Invalid email or password."
+      sign_up_failed: "Sign up failed"
