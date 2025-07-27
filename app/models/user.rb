@@ -5,9 +5,18 @@ class User < ApplicationRecord
 
   USER_PERMIT = %i(name email password
                                 password_confirmation
-                                birthday,gender).freeze
+                                birthday gender).freeze
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
+  def self.digest string
+    cost = if ActiveModel::SecurePassword.min_cost
+             BCrypt::Engine::MIN_COST
+           else
+             BCrypt::Engine.cost
+           end
+    BCrypt::Password.create string, cost: cost # rubocop:disable Style/HashSyntax
+  end
 
   before_save :downcase_email
 
