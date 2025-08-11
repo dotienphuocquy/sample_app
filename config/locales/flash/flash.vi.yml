@@ -3,10 +3,15 @@ vi:
     success:
       user_created: "Tạo tài khoản thành công!"
       profile_updated: "Cập nhật hồ sơ thành công!"
+      reset_password_success: "Đặt lại mật khẩu thành công!"
     danger:
       user_not_found: "Không tìm thấy người dùng."
       please_log_in: "Vui lòng đăng nhập."
+      email_address_not_found: "Địa chỉ email không được tìm thấy."
+      password_reset_expired: "Đặt lại mật khẩu đã hết hạn."
     error:
       cannot_edit: "Bạn không được phép chỉnh sửa."
       invalid_email_password_combination: "Mật khẩu hoặc tài khoản không đúng."
       sign_up_failed: "Đăng ký thất bại"
+    info:
+      email_sent_with_password_reset_instructions: "Email đã được gửi với hướng dẫn đặt lại mật khẩu."

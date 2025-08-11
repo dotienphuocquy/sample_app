@@ -3,10 +3,15 @@ en:
     success:
       user_created: "Account created successfully!"
       profile_updated: "Profile updated successfully!"
+      reset_password_success: "Reset password successfully"
     danger:
       user_not_found: "User not found."
       please_log_in: "Please log in."
+      email_address_not_found: "Email address not found."
+      password_reset_expired: "Password reset expired."
     error:
       cannot_edit: "You are not authorized to edit this page."
       invalid_email_password_combination: "Invalid email or password."
       sign_up_failed: "Sign up failed"
+    info:
+      email_sent_with_password_reset_instructions: "Email sent with password reset instructions."
