@@ -27,10 +27,9 @@ class UsersController < ApplicationController
     @user = User.new user_params
 
     if @user.save
-      reset_session
-      log_in @user
-      flash[:success] = t("user_created_successful")
-      redirect_to @user, status: :see_other
+      @user.send_activation_email
+      flash[:info] = t("check_activate_email")
+      redirect_to root_url, status: :see_other
     else
       flash[:error] = t("sign_up_failed")
       render :new, status: :unprocessable_entity
@@ -59,11 +58,11 @@ class UsersController < ApplicationController
   end
 
   def logged_in_user
-    unless logged_in? # rubocop:disable Style/GuardClause
-      store_location
-      flash[:danger] = t("please_log_in")
-      redirect_to login_url
-    end
+    return if logged_in?
+
+    store_location
+    flash[:danger] = t("please_log_in")
+    redirect_to login_url
   end
 
   def correct_user
