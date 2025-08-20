@@ -6,7 +6,6 @@ class User < ApplicationRecord
   USER_PERMIT = %i(name email password
                                 password_confirmation
                                 birthday,gender).freeze
-
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   before_save :downcase_email
