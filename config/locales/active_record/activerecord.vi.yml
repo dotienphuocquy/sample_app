@@ -10,6 +10,9 @@ vi:
         name: "Họ tên"
         email: "Email"
         birthday: "Ngày sinh"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+        gender: "Giới tính"
     errors:
       models:
         product:
@@ -29,4 +32,4 @@ vi:
             birthday:
               blank: "không được để trống"
               birthday_in_future: "Ngày sinh không được nằm trong tương lai"
-              birthday_too_old: "Ngày"
+              birthday_too_old: "Ngày sinh không được quá %{max_age} tuổi"
