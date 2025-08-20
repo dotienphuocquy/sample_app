@@ -10,6 +10,9 @@ vi:
         name: "Họ tên"
         email: "Email"
         birthday: "Ngày sinh"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+        gender: "Giới tính"
     errors:
       models:
         product:

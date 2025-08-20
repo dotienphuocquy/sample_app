@@ -1,0 +1,4 @@
+vi:
+  time:
+    formats:
+      long: "%H:%M %d-%m-%Y"

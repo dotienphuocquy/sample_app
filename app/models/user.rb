@@ -1,7 +1,22 @@
 class User < ApplicationRecord
   has_secure_password
 
+  enum gender: {male: 0, female: 1, other: 2}
+
+  USER_PERMIT = %i(name email password
+                                password_confirmation
+                                birthday gender).freeze
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
+  def self.digest string
+    cost = if ActiveModel::SecurePassword.min_cost
+             BCrypt::Engine::MIN_COST
+           else
+             BCrypt::Engine.cost
+           end
+    BCrypt::Password.create string, cost: cost # rubocop:disable Style/HashSyntax
+  end
 
   before_save :downcase_email
 
@@ -13,11 +28,12 @@ class User < ApplicationRecord
                     uniqueness: true
   validates :birthday, presence: true
   validate :birthday_within_max_age
+  validates :gender, presence: true
 
   private
 
   def downcase_email
-    self.email = email.downcase!
+    self.email = email.downcase
   end
 
   def birthday_within_max_age
