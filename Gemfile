@@ -60,6 +60,9 @@ gem "bootstrap-sass", "3.4.1"
 
 gem "jquery-rails"
 
+gem "active_storage_validations", "0.9.8"
+gem "image_processing", "1.12.2"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html]
 # gem "image_processing", "~> 1.2"
 

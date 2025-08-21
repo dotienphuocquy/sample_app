@@ -1,6 +1,8 @@
 <% provide :title, t("sign_up") %>
 <% provide :button_text, t("create_my_account") %>
 
+<%= render "shared/error_messages", object: f.object %>
+
 <h1><%= t("sign_up") %></h1>
 
 <div class="row">

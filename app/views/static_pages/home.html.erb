@@ -8,3 +8,16 @@
   <%= link_to t("static_pages.home.rails_tutorial"), Settings.rails_tutorial_url, target: "_blank" %>
   <%= t("static_pages.home.sample_app") %>.
 </p>
+
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info"><%= render "shared/user_info" %></section>
+      <section class="micropost_form"><%= render "shared/micropost_form" %></section>
+    </aside>
+    <div class="col-md-8">
+      <h3><%= t("micropost_feed") %></h3>
+      <%= render "shared/feed" %>
+    </div>
+  </div>
+<% end %>

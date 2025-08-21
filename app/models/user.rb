@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :microposts, dependent: :destroy
   has_secure_password
 
   enum gender: {male: 0, female: 1, other: 2}
@@ -54,6 +55,10 @@ class User < ApplicationRecord
     return false unless digest
 
     BCrypt::Password.new(digest).is_password? token
+  end
+
+  def feed
+    microposts
   end
 
   # Activates an account.

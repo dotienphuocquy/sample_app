@@ -13,5 +13,7 @@ module RailsTutorial
     config.i18n.available_locales = [:vi, :en]
 
     config.i18n.default_locale = :en
+
+    config.active_storage.variant_processor = :mini_magick
   end
 end

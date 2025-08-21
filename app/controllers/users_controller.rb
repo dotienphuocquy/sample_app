@@ -8,7 +8,9 @@ class UsersController < ApplicationController
     @pagy, @users = pagy User.all
   end
 
-  def show; end
+  def show
+    @pagy, @microposts = pagy @user.microposts, items: 10
+  end
 
   def destroy
     if @user.destroy
